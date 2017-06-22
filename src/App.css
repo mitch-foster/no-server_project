@@ -1,10 +1,38 @@
-.App {
-  text-align: center;
+/*Font family is tradegothic*/
+
+.main_div {
+  background-color: #DE3A31;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.marvel_logo {
+  max-width: 20vw;
+  max-height: 20vh;
+}
+
+.enter_btn {
+  background: white;
+}
+
+.search_btn {
+  background: white;
+}
+
+.search_input {
+  background-color: transparent;
+  color: black;
+}
+
+
+
+
+
+
+/*CSS imported from create-react-app*/
+
+.App {
+  text-align: center;
 }
 
 .App-header {
