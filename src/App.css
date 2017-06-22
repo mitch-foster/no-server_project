@@ -24,6 +24,15 @@
   color: black;
 }
 
+.navbar_div {
+  display: flex;
+  height: 10vh;
+}
+
+.back_arrow {
+  width: 3vw;
+  padding-bottom: 4px;
+}
 
 
 

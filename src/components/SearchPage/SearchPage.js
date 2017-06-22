@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import SearchNavBar from './SearchNavBar';
+
 class SearchPage extends Component {
     render() {
         return (
             <div className='main_div'>
-                {/*<Nav/>*/}
+                <SearchNavBar/>
                 <h1>Hero Search</h1>
                 <form>
 
