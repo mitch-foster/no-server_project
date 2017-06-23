@@ -1,5 +1,12 @@
 /*Font family is tradegothic*/
-
+/*new main div {
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f5f4;
+    height: 90vh;
+}*/
 .main_div {
   background-color: #DE3A31;
   width: 100vw;
@@ -41,7 +48,7 @@
 }
 
 .charcter_image {
-  width: 20vw;
+  width: 40vw;
 }
 
 

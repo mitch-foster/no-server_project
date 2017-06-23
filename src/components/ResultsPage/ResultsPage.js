@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 import spiderman from './spiderman.jpg'
 
 class ResultsPage extends Component {
+    // componentDidMount();
     render() {
         return (
             <div className='main_div'>
@@ -14,7 +15,7 @@ class ResultsPage extends Component {
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam quisquam mollitia excepturi sapiente dolore nesciunt aliquam odio magni eligendi, non rerum est cum architecto laboriosam a saepe quas inventore. Quis?</p>
                 </div>
             </div>
-        );
+        ); 
     }
 }
 

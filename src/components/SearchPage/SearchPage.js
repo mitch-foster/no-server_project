@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import SearchNavBar from './SearchNavBar';
 
+import { Button } from 'react-bootstrap';
+
 class SearchPage extends Component {
     render() {
         return (
@@ -11,7 +13,7 @@ class SearchPage extends Component {
                 <form>
 
                     <input className='search_input'type="text" placeholder='name of hero'/>
-                    <button className='search_btn'>SEARCH</button>
+                    <Button>SEARCH</Button>
 
                 </form>
             </div>

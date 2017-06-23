@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import marvel_logo from '../../marvel_logo.png'
+import { Button } from 'react-bootstrap';
 
 
 
@@ -12,7 +13,7 @@ class LandingPage extends Component {
                     <h1>Marvel Heroes</h1> 
                     <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta maiores veniam officia nihil earum consequuntur</h3>
                     <img className='marvel_logo' src={marvel_logo} alt="Marvel Logo"/>
-                    <button className='enter_btn'>ENTER</button>
+                    <Button>ENTER</Button>
                 </div>
             </div>
         );
