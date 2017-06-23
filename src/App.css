@@ -9,8 +9,15 @@
 }*/
 .main_div {
   background-color: #DE3A31;
-  width: 100vw;
   height: 100vh;
+}
+
+.component_div {
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f5f4;
+    height: 95vh;
 }
 
 .marvel_logo {
@@ -31,15 +38,9 @@
   color: black;
 }
 
-.navbar_div {
-  display: flex;
-  justify-content: space-between;
-  height: 10vh;
-}
-
 .search_navbar_div {
   display: flex;
-  height: 10vh;
+  height: 5vh;
 }
 
 .arrow {
@@ -47,11 +48,23 @@
   padding-bottom: 4px;
 }
 
-.charcter_image {
-  width: 40vw;
+/*********************************RESTULTS PAGE**************************************/
+.navbar_div {
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
 }
 
+.charcter_image {
+  width: 50vw;
+}
 
+.results_p {
+    margin-top: 3vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    text-align: center;
+}
 
 
 /*CSS imported from create-react-app*/
