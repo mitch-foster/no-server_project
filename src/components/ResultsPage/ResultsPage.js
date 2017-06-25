@@ -13,7 +13,9 @@ class ResultsPage extends Component {
         super(props)
         this.state = {
             name: this.props.match.params.name.split(':').pop(),
-            results: []  
+            results: [],
+            thumbnail: '',
+            charImages: ['thorUrl', 'spidermanUrl', '']
         }
     }
 
@@ -30,35 +32,39 @@ class ResultsPage extends Component {
     https://gateway.marvel.com:443/v1/public/characters?name=${this.state.name}&ts=${timeStamp}&apikey=${keys.publicKey}&hash=${newHash}
 ` 
     
-        return axios.get(marvelURL)
+        axios.get(marvelURL)
             .then(response => {
                 console.log("RESPONSE",response)
                 // console.log("old state", this.state.results)
                 this.setState({
-                    results: response.data.data.results
+                    results: response.data.data.results[0],
+                    thumbnail: `${response.data.data.results[0].thumbnail.path}.${response.data.data.results[0].thumbnail.extension}`
                 })
-                console.log("new state", this.state.results)
+
+                console.log("name", this.state.results.name)
+                console.log("description", this.state.results.description)
+                console.log("thumbnail", this.state.results.thumbnail.path)
+                console.log("thumbnailState", this.state.thumbnail)
             })
 
 
     }
-
-    render() {
-        // const promise = AxiosFunction(this.state.name);
-        // console.log(promise);
-        // console.log(this.props.match.params.name.split(':').pop())
-        return (
-            <div className='main_div'>
-                <NavBar/>
-                <div className='component_div'>
-                    <h2>{this.state.name}</h2>
-                    <img className='charcter_image' src={spiderman} alt="Spider-Man"/>
-                    <p className='results_p'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam quisquam mollitia excepturi sapiente dolore nesciunt aliquam odio magni eligendi, non rerum est cum architecto laboriosam a saepe quas inventore. Quis?</p>
-                    Results:
+        render() {
+            
+            return (
+                <div className='main_div'>
+                    <NavBar/>
+                    <div className='component_div' style={{height: '90vh'}}>
+                        <h2>{this.state.results.name}</h2>
+                        <img className='charcter_image' src={this.state.thumbnail} alt="{this.state.results.name}"/>
+                        <p className='results_p'>{this.state.results.description}</p>
+                    </div>
+                    <div style={{height: '5vh', backgroundColor: '#f7f5f4'}}>
+                        <p>Data provided by <a href="http://marvel.com\" >Marvel</a>. © 2017 MARVEL</p>
+                    </div>
                 </div>
-            </div>
-        ); 
-    }
+            ); 
+        }
 }
 
 export default ResultsPage;

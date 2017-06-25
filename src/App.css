@@ -1,19 +1,25 @@
 /*Font family is tradegothic*/
-/*new main div {
-      display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f5f4;
-    height: 90vh;
-}*/
+
 .main_div {
   background-color: #DE3A31;
   height: 100vh;
 }
 
+.landing_page_div {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f5f4;
+    height: 98vh;
+}
+.landing_page_header_div {
+  height: 1vh;
+  background-color: #DE3A31;
+}
 .component_div {
-      display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f7f5f4;
@@ -21,26 +27,59 @@
 }
 
 .marvel_logo {
-  max-width: 20vw;
-  max-height: 20vh;
+  max-width: 60vw;
+  padding-top: 5vh;
 }
 
-.enter_btn {
-  background: white;
+.landing_page_welcome {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: center;
+    padding-bottom: 10vh;
+}
+
+.btn {
+    color: #f7f5f4;
+    background-color: #DE3A31;
+    border-color: #f7f5f4;
+}
+
+/*********************************SEARCH PAGE**************************************/
+.search_page_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f5f4;
+    height: 93vh;
+}
+
+.search_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3vh;
 }
 
 .search_btn {
-  background: white;
+    color: #f7f5f4;
+    background-color: #DE3A31;
+    border-color: #f7f5f4;
 }
 
 .search_input {
   background-color: transparent;
   color: black;
+  text-align: center;
+  width: 60vw;
+  margin-bottom: 3vh;
+  font-size: 120%;
 }
 
 .search_navbar_div {
   display: flex;
-  height: 5vh;
+  height: 6vh;
+  flex-direction: row;
+  background-color: #DE3A31;
 }
 
 .arrow {
