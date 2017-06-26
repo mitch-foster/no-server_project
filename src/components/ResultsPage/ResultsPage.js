@@ -27,8 +27,8 @@ class ResultsPage extends Component {
         const newHash = md5(hash);
         
         const marvelURL = `
-    https://gateway.marvel.com:443/v1/public/characters?name=${this.state.name}&ts=${timeStamp}&apikey=${keys.publicKey}&hash=${newHash}
-` 
+            https://gateway.marvel.com:443/v1/public/characters?name=${this.state.name}&ts=${timeStamp}&apikey=${keys.publicKey}&hash=${newHash}
+        ` 
     
         axios.get(marvelURL)
             .then(response => {
@@ -39,7 +39,7 @@ class ResultsPage extends Component {
                 this.setState({
                     results: response.data.data.results[0] 
                             || {
-                                    name: 'Check your spelling', 
+                                    name: 'Error: #spellcheck', 
                                     description: "It seems you have either miss-spelled the character's name (hint: if the character's name is two words try using a \"-\"), or this character is not part of the Marvel Universe",
                                     thumbnail: 'http://logodatabases.com/wp-content/uploads/2012/04/marvel-logo',
                                 },
@@ -57,7 +57,20 @@ class ResultsPage extends Component {
 
     }
         render() {
-            
+            let wikiURL = `http://marvel.com/universe/${this.state.results.name}#axzz4l7nulrHL`
+            if(this.state.results.length === 0){
+                return(
+                 <div className='main_div'>
+                    <NavBar/>
+                    <div className='results_div'>
+                        <img className='loading_gif' src='http://uploads.webflow.com/5750baac5650b01552cc7c92/5750baac5650b01552cc7cdf_infinite-gif-preloader.gif'/>
+                    </div>
+                    <div className='resutls_page_footer'>
+                        <p>Data provided by <a target="_blank" href="http://marvel.com\">Marvel</a>. © 2017 MARVEL</p>
+                    </div>
+                </div>
+            )
+            }
             return (
                 <div className='main_div'>
                     <NavBar/>
@@ -76,7 +89,7 @@ class ResultsPage extends Component {
                             {
                                 this.state.results.description 
                                 || 
-                                <h4>For more info on {this.state.results.name} visit the Maravel Universe <a target="_blank" href="http://marvel.com/universe/">Wiki</a></h4>
+                                <h4>For more info on {this.state.results.name} visit the Maravel Universe <a target="_blank" href={wikiURL}>Wiki</a></h4>
                             }
 
                         </p>

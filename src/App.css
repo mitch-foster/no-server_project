@@ -114,6 +114,10 @@
     
 }
 
+.loading_gif {
+  padding-left: 3vw;
+}
+
 .charcter_image {
   width: 50vw;
 }
