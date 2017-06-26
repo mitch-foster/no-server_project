@@ -8,14 +8,12 @@ import keys from './keys.js'
 import spiderman from './spiderman.jpg'
 
 class ResultsPage extends Component {
-    // componentDidMount();
     constructor(props){
         super(props)
         this.state = {
             name: this.props.match.params.name.split(':').pop(),
             results: [],
             thumbnail: '',
-            charImages: ['thorUrl', 'spidermanUrl', '']
         }
     }
 
@@ -54,12 +52,12 @@ class ResultsPage extends Component {
             return (
                 <div className='main_div'>
                     <NavBar/>
-                    <div className='component_div' style={{height: '90vh'}}>
+                    <div className='results_div'>
                         <h2>{this.state.results.name}</h2>
                         <img className='charcter_image' src={this.state.thumbnail} alt="{this.state.results.name}"/>
                         <p className='results_p'>{this.state.results.description}</p>
                     </div>
-                    <div style={{height: '5vh', backgroundColor: '#f7f5f4'}}>
+                    <div className='resutls_page_footer'>
                         <p>Data provided by <a href="http://marvel.com\" >Marvel</a>. © 2017 MARVEL</p>
                     </div>
                 </div>

@@ -1,5 +1,3 @@
-/*Font family is tradegothic*/
-
 .main_div {
   background-color: #DE3A31;
   height: 100vh;
@@ -13,17 +11,12 @@
     align-items: center;
     background-color: #f7f5f4;
     height: 98vh;
+    font-family: inherit;
 }
+
 .landing_page_header_div {
   height: 1vh;
   background-color: #DE3A31;
-}
-.component_div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f7f5f4;
-    height: 95vh;
 }
 
 .marvel_logo {
@@ -36,6 +29,8 @@
     padding-right: 5vw;
     text-align: center;
     padding-bottom: 10vh;
+    padding-top: 5vh;
+    font-family: inherit;
 }
 
 .btn {
@@ -51,6 +46,7 @@
     align-items: center;
     background-color: #f7f5f4;
     height: 93vh;
+    font-family: inherit;
 }
 
 .search_form {
@@ -76,22 +72,44 @@
 }
 
 .search_navbar_div {
+  position: relative;
   display: flex;
   height: 6vh;
   flex-direction: row;
   background-color: #DE3A31;
 }
 
-.arrow {
-  width: 3vw;
-  padding-bottom: 4px;
+.home {
+  position: absolute;
+  right: 2px;
+  width: 7vw;
+  padding-top: 6px;
+  fill:#f7f5f4;
 }
 
 /*********************************RESTULTS PAGE**************************************/
 .navbar_div {
+  position: relative;
   display: flex;
   justify-content: space-between;
   height: 5vh;
+}
+
+.search {
+  position: absolute;
+  left: 2px;
+  width: 7vw;
+  padding-top: 6px;
+  fill:#f7f5f4;
+}
+
+.results_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f5f4;
+    height: 92vh;
+    font-family: inherit;
 }
 
 .charcter_image {
@@ -99,12 +117,18 @@
 }
 
 .results_p {
-    margin-top: 3vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    text-align: center;
+  margin-top: 3vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  text-align: center;
 }
 
+.resutls_page_footer {
+  height: 3vh;
+  background-color: #DE3A31;
+  display: flex;
+  justify-content: center;
+}
 
 /*CSS imported from create-react-app*/
 

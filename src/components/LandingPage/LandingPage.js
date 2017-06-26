@@ -16,7 +16,7 @@ class LandingPage extends Component {
                 <div className='landing_page_div'>
                     <img className='marvel_logo' src={marvel_logo} alt="Marvel Logo"/>
                     <h1>Characters</h1> 
-                    <h3 className='landing_page_welcome'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta maiores veniam officia nihil earum consequuntur</h3>
+                    <h3 className='landing_page_welcome'>Educate yourself on the Marvel Universe</h3>
                     <Link to='/search'>
                         <Button className='btn'>ENTER</Button>
                     </Link>

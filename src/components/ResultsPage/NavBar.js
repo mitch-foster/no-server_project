@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import back_arrow from '../../back_arrow.svg';
-import search_arrow from './right-arrow.svg';
+import home from '../../home.svg';
+import search from '../../search.svg';
 
 class NavBar extends Component {
     render() {
@@ -10,14 +10,12 @@ class NavBar extends Component {
             <div className='navbar_div'>
                 <div>
                     <Link to='/search'>
-                        <img className='arrow' src={back_arrow} alt="back arrow"/>
-                        <h6>Go Back</h6>    
+                        <img className='search' src={search} alt="search"/> 
                     </Link>
                 </div>
                 <div>
                     <Link to='/search'>
-                        <img className='arrow' src={search_arrow} alt="back arrow"/>
-                        <h6>New Search</h6>
+                        <img className='home' src={home} alt="home"/>
                     </Link>    
                 </div> 
             </div>
