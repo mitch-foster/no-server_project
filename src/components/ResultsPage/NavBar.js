@@ -14,7 +14,7 @@ class NavBar extends Component {
                     </Link>
                 </div>
                 <div>
-                    <Link to='/search'>
+                    <Link to='/'>
                         <img className='home' src={home} alt="home"/>
                     </Link>    
                 </div> 

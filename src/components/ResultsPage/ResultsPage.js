@@ -5,7 +5,7 @@ import md5 from 'js-md5';
 import NavBar from './NavBar'
 
 import keys from './keys.js'
-import spiderman from './spiderman.jpg'
+import marvel_logo from '../../marvel_logo.png'
 
 class ResultsPage extends Component {
     constructor(props){
@@ -33,10 +33,18 @@ class ResultsPage extends Component {
         axios.get(marvelURL)
             .then(response => {
                 console.log("RESPONSE",response)
-                // console.log("old state", this.state.results)
+                let thumb_nail = response.data.data.results[0] === undefined
+                                    ? 'http://logodatabases.com/wp-content/uploads/2012/04/marvel-logo.jpg'
+                                    : `${response.data.data.results[0].thumbnail.path}.${response.data.data.results[0].thumbnail.extension}`
                 this.setState({
-                    results: response.data.data.results[0],
-                    thumbnail: `${response.data.data.results[0].thumbnail.path}.${response.data.data.results[0].thumbnail.extension}`
+                    results: response.data.data.results[0] 
+                            || {
+                                    name: 'Check your spelling', 
+                                    description: "It seems you have either miss-spelled the character's name (hint: if the character's name is two words try using a \"-\"), or this character is not part of the Marvel Universe",
+                                    thumbnail: 'http://logodatabases.com/wp-content/uploads/2012/04/marvel-logo',
+                                },
+                    thumbnail: thumb_nail
+                                
                 })
 
                 console.log("name", this.state.results.name)
@@ -44,6 +52,7 @@ class ResultsPage extends Component {
                 console.log("thumbnail", this.state.results.thumbnail.path)
                 console.log("thumbnailState", this.state.thumbnail)
             })
+
 
 
     }
@@ -54,11 +63,26 @@ class ResultsPage extends Component {
                     <NavBar/>
                     <div className='results_div'>
                         <h2>{this.state.results.name}</h2>
-                        <img className='charcter_image' src={this.state.thumbnail} alt="{this.state.results.name}"/>
-                        <p className='results_p'>{this.state.results.description}</p>
+                        <img 
+                            className='charcter_image' 
+                            src=
+                                {
+                                    this.state.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
+                                    ? marvel_logo : this.state.thumbnail
+
+                                } 
+                        />
+                        <p className='results_p'>
+                            {
+                                this.state.results.description 
+                                || 
+                                <h4>For more info on {this.state.results.name} visit the Maravel Universe <a target="_blank" href="http://marvel.com/universe/">Wiki</a></h4>
+                            }
+
+                        </p>
                     </div>
                     <div className='resutls_page_footer'>
-                        <p>Data provided by <a href="http://marvel.com\" >Marvel</a>. © 2017 MARVEL</p>
+                        <p>Data provided by <a target="_blank" href="http://marvel.com\">Marvel</a>. © 2017 MARVEL</p>
                     </div>
                 </div>
             ); 

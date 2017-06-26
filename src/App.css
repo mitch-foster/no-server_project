@@ -107,9 +107,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 5vh;
     background-color: #f7f5f4;
     height: 92vh;
     font-family: inherit;
+    
 }
 
 .charcter_image {
