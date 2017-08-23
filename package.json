@@ -6,6 +6,8 @@
     "axios": "^0.16.2",
     "bootstrap": "^3.3.7",
     "js-md5": "^0.4.2",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
@@ -15,9 +17,12 @@
     "react-scripts": "1.0.7"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start"
   }
 }

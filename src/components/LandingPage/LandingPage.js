@@ -20,7 +20,7 @@ class LandingPage extends Component {
                     <Link to='/search'>
                         <Button className='btn'>ENTER</Button>
                     </Link>
-                    {/*<img src={marvel_lineup} alt="marvel lineup"/>*/}
+                    <img className='landing_page_image' src={marvel_lineup} alt="marvel lineup"/>
                 </div>
             </div>
         );

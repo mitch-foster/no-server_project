@@ -25,7 +25,7 @@ class SearchPage extends Component {
                 <SearchNavBar/>
                 <div className='search_page_div' style={{paddingTop: '5vh'}}>
                     <h1>Character Search</h1>
-                    <form className='search_form'>
+                    <div className='search_form'>
                         <input 
                             className='search_input'
                             type="text" 
@@ -35,7 +35,7 @@ class SearchPage extends Component {
                         <Link to={`/results/:${this.state.userInput}`}>
                             <Button className='search_btn'>SEARCH</Button>
                         </Link>
-                    </form>
+                    </div>
                 </div>
             </div>
         );

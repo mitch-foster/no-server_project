@@ -39,7 +39,7 @@ class ResultsPage extends Component {
                 this.setState({
                     results: response.data.data.results[0] 
                             || {
-                                    name: 'Error: #spellcheck', 
+                                    name: 'Error: 404 Not Found', 
                                     description: "It seems you have either miss-spelled the character's name (hint: if the character's name is two words try using a \"-\"), or this character is not part of the Marvel Universe",
                                     thumbnail: 'http://logodatabases.com/wp-content/uploads/2012/04/marvel-logo',
                                 },
